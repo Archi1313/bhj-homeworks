@@ -1,19 +1,20 @@
 const fonts = Array.from(document.querySelectorAll('.font-size'));
-const books = document.querySelector('.book');
-let act = document.querySelector('.font-size_active');
-for (el of fonts) {
-	el.addEventListener('click', function (event){
+const book = document.querySelector('.book');
+
+const bookFont = document.querySelector('.book__control');
+	bookFont.addEventListener('click', function (event){
 	event.preventDefault();
- 	if (fonts.indexOf(el)===0){
+ 	if (fonts.indexOf(event.target)===0){
 	book.className = "book book_fs-small";
-	} else if (fonts.indexOf(el)===2){
+
+	} else if (fonts.indexOf(event.target)===2){
 		book.className = "book book_fs-big";
 	} else {
 		book.className = "book";
 	}
+	let act = document.querySelector('.font-size_active');
 	act.classList.remove('font-size_active');
-	el.classList.toggle('font-size_active');
+	event.target.classList.toggle('font-size_active');
 	});
 
-}
-//при клике мышкой на любой из элементов fonts событие происходит на третьем элементе с классом font-size_big (проверял с помощью getBoundingClientRect, у всех трех элементов одни координаты)
+
