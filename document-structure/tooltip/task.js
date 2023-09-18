@@ -12,3 +12,4 @@ for (let el of tooltip) {
 		el.querySelector('div').classList.toggle('tooltip_active');
 	})
 }
+//так и не придумал, как отцентрировать подсказку относительно родителя(
