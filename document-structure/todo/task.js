@@ -2,6 +2,10 @@ const input = document.querySelector('input');
 const taskList = document.querySelector('.tasks__list');
 let remove;
 
+input.addEventListener('submit', function (event) {
+	event.preventDefault();
+})
+
 input.addEventListener('keyup', function (event) {
 	if ((event.code==='Enter')&(input.value!='')) {
 		taskList.innerHTML+=`<div class="task">
